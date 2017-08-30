@@ -107,3 +107,13 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+#gameEnd {
+    list-style: none;
+    text-align: center;
+    display: inline-block;
+}
+
+.fa-check-circle-o {
+    font-size: 64px;
+}

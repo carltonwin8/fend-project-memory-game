@@ -1,5 +1,12 @@
 # Memory Game Project
 
+  - No additional dependencies are required for this game other than the resources
+    linked to in the HTML file.
+  - Play the game by clicking on the squares and matching the cards that are shown.
+
+
+# Pre-Fork Read Contents Follows
+
 ## Table of Contents
 
 * [Instructions](#instructions)
