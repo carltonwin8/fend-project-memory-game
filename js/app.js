@@ -139,7 +139,6 @@ function decrementStars() {
   const moves = parseInt(movesE[0].innerText);
   if (moves === 9) { starEs[0].style.display = "none"; decStarCount(); }
   if (moves === 13) { starEs[1].style.display = "none"; decStarCount(); }
-  if (moves === 17) { starEs[2].style.display = "none"; decStarCount(); }
 }
 
 function resetStars() {

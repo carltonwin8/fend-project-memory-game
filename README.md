@@ -24,5 +24,7 @@ Play the game by:
   - when two consecutive card are revealed and they match they remain open,
   - the game ends when all the hidden squares are  revealed,
   - the user score and time to complete the game is shown,
-  - the user gets 1, 2 or 3 stars based on finishing the game in less than
-    9, 13 or 17 moves.
+  - the user gets 1, 2 or 3 stars:
+    - 3 stars for finishing the game in 8 moves or less
+    - 2 stars for finishing the game in 9-12 moves inclusive
+    - 1 star for finishing the game in 13 or more moves
