@@ -6,9 +6,16 @@ The code is forked from the original repository
 [here](https://github.com/udacity/fend-project-memory-game)
 where some more details are provided.
 
-In order to run this code, clone or download this repository and open `index.html`
-in a web browser. An Internet connection is required as icons and fonts used
-in the application are downloaded from the Internet.
+In order to run this code, clone or download this repository and open
+`index.html` in a web browser.
+An Internet connection is required as icons and fonts used in the application
+are downloaded from the Internet.
+
+The `index.html` file is dependent on the following.
+  - [Google Fonts](https://fonts.googleapis.com/css?family=Coda"),
+  - [Font Awesome Icons/Fonts](https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"),
+  - `css/app.css` - the CSS style file in this repository,
+  - `js/app.js` - the JavaScript file in this repository.
 
 Play the game by:
   - clicking on a square to reveal the hidden icon,
