@@ -1,27 +1,21 @@
 # Memory Game Project
 
-  - No additional dependencies are required for this game other than the resources
-    linked to in the HTML file.
-  - Play the game by clicking on the squares and matching the cards that are shown.
+This repository code is for a project/assignment in the
+[Udacity Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001).
+The code is forked from the original repository
+[here](https://github.com/udacity/fend-project-memory-game)
+where some more details are provided.
 
+In order to run this code, clone or download this repository and open `index.html`
+in a web browser. An Internet connection is required as icons and fonts used
+in the application are downloaded from the Internet.
 
-# Pre-Fork Read Contents Follows
-
-## Table of Contents
-
-* [Instructions](#instructions)
-* [Contributing](#contributing)
-
-## Instructions
-
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+Play the game by:
+  - clicking on a square to reveal the hidden icon,
+  - only two icons will be revealed at a time,
+  - the goal is to consecutively reveal two matching icons,
+  - when two consecutive card are revealed and they match they remain open,
+  - the game ends when all the hidden squares are  revealed,
+  - the user score and time to complete the game is shown,
+  - the user gets 1, 2 or 3 stars based on finishing the game in less than
+    9, 13 or 17 moves.

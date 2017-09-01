@@ -58,12 +58,14 @@ const moves = document.getElementById("moves");
 const stars = document.getElementById("stars");
 const playAgain = document.getElementById("playAgain");
 const timeE = document.getElementById("time");
+const timerE = document.getElementsByClassName("timer");
 const selected = [];
 const CARD_OPEN = "card open";
 const CARD_MATCHED = "card matched";
 const CARD_CLOSED = "card closed";
 let startTime;
 
+/* Attach event listeners to the cards to take the correct action when clicked */
 function attachEventListener() {
   for (let i=0; i < cardEs.length; i++) {
       cardEs[i].addEventListener("click", function (e) {
@@ -104,18 +106,21 @@ function attachEventListener() {
   }
 }
 
+/* determines if the card state is open, closed or matched */
 function getCardState(target) {
   if (getState(target, "open")) return CARD_OPEN;
   if (getState(target, "match")) return CARD_MATCHED;
   return CARD_CLOSED;
 }
 
+/* general route for determining card state */
 function getState(target, state) {
   const classes = target.classList;
   for (let i=0; i < classes.length; i++) if (classes[i] === state) return true;
   return false;
 }
 
+/* determines if the two clicked cards are a match */
 function matchedCard(target) {
   if (target.children[0].className === selected[0].children[0].className)
     return true;
@@ -145,18 +150,32 @@ function resetStars() {
 restartE[0].addEventListener("click", restartGame);
 playAgain.addEventListener("click", restartGame);
 
+/* display user stats on completion of the game */
 function showEndStats() {
-  const timeDiff = new Date().getTime() - startTime;
-  const sec = Math.floor(timeDiff/1000);
-  const min = Math.floor(sec/60);
-  const hours = Math.floor(min/60);
-  timeE.innerText = hours + ":" + min + ":" + sec;
+  timeE.innerText = getTimeDelta();
   score[0].style.display = "none";
   deckE[0].style.display="none";
   gameEnd.style.display="";
   moves.innerText = movesE[0].innerText;
 }
 
+/* creates a string representation of the time from the game start to now */
+function getTimeDelta() {
+  const timeDiff = new Date().getTime() - startTime;
+  let sec = Math.floor(timeDiff/1000);
+  let min = Math.floor(sec/60);
+  const hours = Math.floor(min/60);
+  sec = sec % 60;
+  min = min % 60;
+  return hours + ":" + ("0"+min).slice(-2) + ":" + ("0"+sec).slice(-2);
+}
+
+function updateTime() {
+  timerE[0].innerText = getTimeDelta();
+  setTimeout(updateTime, 1000);
+}
+
+/* on game restart displays the game board/DOM with all the settings reset */
 function restartGame() {
   score[0].style.display = "";
   deckE[0].style.display="";
@@ -166,8 +185,10 @@ function restartGame() {
   setupCards();
   attachEventListener();
   startTime = new Date().getTime();
+  updateTime();
 }
 
+/* puts the cards on the game board/DOM */
 function setupCards() {
   const shuffled = shuffle(cards)
   deckE[0].innerHTML = "";
